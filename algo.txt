@@ -1,0 +1,114 @@
+MTF algoritm:-
+The primary idea behind MTF is to maintain an ordered list of legal symbols (a to z, in our example). 
+Read one character at a time from input string . 
+Print out the position at which that character appears in the list. 
+Move that character to front of the list and repeat the process until indexes for all input characters are obtained.
+
+3.hauffman coding:-
+Huffman (C)
+n=|C|
+Q=C
+for i=1 to n-1
+do
+z=allocate_Node()
+x=left[z]=Extract_Min(Q)
+y=right[z]=Extract_Min(Q)
+f[z]=f[x]+f[y]
+Insert(Q,z)
+return Extract_Min(Q)
+
+4.Implement Huffman code which can compress given file and 
+decompress compressed file algori
+
+ Steps of Huffman Encoding are:
+create and initialize a PriorityQueue Queue consisting of each
+unique character.
+sort in ascending order of their frequencies.
+for all the unique characters:
+create a new_node
+get minimum_value from Queue and set it to left child of
+new_node
+get minimum_value from Queue and set it to right child of
+new_node
+calculate the sum of these two minimum values as
+sum_of_two_minimum
+assign sum_of_two_minimum to the value of new_node
+insert new_node into the tree
+return root_node
+
+
+5.Implement adaptive Huffman program to compress decompressed file.
+
+algoritm:-
+The input to the algorithm is the array of characters in the text file.
+The frequency of occurrences of each character in the file is calculated.
+Struct array is created where each element includes the character along with their frequencies. They are stored in a priority queue (min-heap), 
+where the elements are compared using their frequencies.
+To build the Huffman tree, two elements with minimum frequency are extracted from the min-heap.
+The two nodes are added to the tree as left and right children to a new root node which contains the frequency equal to the sum of two frequencies. 
+A lower frequency character is added to the left child node and the higher frequency character into the right child node. 
+The root node is then again added back to the priority queue.
+Repeat from step 4 until there is only one element left in the priority queue.
+Finally, the tree’s left and right edges are numbered 0 and 1, respectively. For each leaf node, the entire tree is traversed, and the corresponding 1 and 0 are appended to their code until a leaf node is encountered.
+Once we have the unique codes for each unique character in the text, we can replace the text characters with their codes. These codes will be stored in bit-by-bit form, which will take up less space than text.
+
+6.Write a program to Implement LZ77 algorithm.
+while input is not empty do
+match := longest repeated occurrence of input that begins in window
+if match exists then
+d := distance to start of match
+l := length of match
+c := char following match in input
+else
+d := 0
+l := 0
+c := first char of input
+end if
+output (d, l, c)
+discard l + 1 chars from front of window
+s := pop l + 1 chars from front of input
+append s to back of window
+repeat
+
+7.Write a program to Implement LZW algorithm.
+Initialize table with single character strings
+  2     P = first input character
+  3     WHILE not end of input stream
+  4          C = next input character
+  5          IF P + C is in the string table
+  6            P = P + C
+  7          ELSE
+  8            output the code for P
+  9          add P + C to the string table
+  10           P = C
+  11         END WHILE
+  12    output code for P 
+
+8.lz78
+algoitm
+Dictionary empty; Prefix ← empty; DictionaryIndex + 1;
+while(characterStream is not empty)
+{
+LZ78 Compression Algorithm (cont'd)
+Char next character in characterStream;
+if(Prefix + Char exists in the Dictionary)
+Prefix ← Prefix + Char;
+else
+{
+if(Prefix is empty)
+< 0;
+CodeWordForPrefix ← DictionaryIndex for Prefix ;
+Output: (CodeWordForPrefix, Char) ;
+insertin Dictionary( ( DictionaryIndex, Prefix + Char));
+DictionaryIndex++;
+Prefix empty ;
+CodeWordForPrefix
+else
+if(Prefix is not empty)
+CodeWordForPrefix DictionaryIndex for Prefix;
+Output: (CodeWordForPrefix, );
+
+10.BWT:_
+Given sequence of length N.
+create (N-1) sequence using cyclic shift of your original sequence.
+N sequence are arrange in lexiographical order.
